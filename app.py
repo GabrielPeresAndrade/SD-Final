@@ -31,8 +31,8 @@ def hello_world2():
 
 @app.route('/Provedor', methods=['POST']) #BROKER
 def cloud_Cadastrando():
+    received_data = json.load(request.files['datas'])
     try:
-        received_data = json.load(request.files['datas'])
         mongo.db.test1.insert(received_data)
     except:
         print('a')
