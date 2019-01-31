@@ -31,9 +31,11 @@ def hello_world2():
 
 @app.route('/Provedor', methods=['POST']) #BROKER
 def cloud_Cadastrando():
-
-    received_data = json.load(request.files['datas'])
-    mongo.db.test1.insert(received_data)
+    try:
+        received_data = json.load(request.files['datas'])
+        mongo.db.test1.insert(received_data)
+    except:
+        print('a')
     
     vCPU = received_data['vCPU']
     RAM = received_data['RAM']
