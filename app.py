@@ -2,6 +2,7 @@ from flask import Flask,jsonify
 from flask import request
 from flask_pymongo import PyMongo
 import json
+import dns
 import requests
 
 app = Flask(__name__)
