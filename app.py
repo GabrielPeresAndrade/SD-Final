@@ -6,7 +6,8 @@ import dns
 import requests
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb+srv://new:adm@sd-dva53.mongodb.net/test?retryWrites=true"
+#app.config["MONGO_URI"] = "mongodb+srv://new:adm@sd-dva53.mongodb.net/test?retryWrites=true"
+app.config["MONGO_URI"] = "mongodb://adc:adm1234@ds113693.mlab.com:13693/trabsd"
 mongo = PyMongo(app)
 # ------------  Ligar server Mongo ------------------
 # cd Desktop\mongodb-win32-x86_64-2008plus-ssl-4.0.5\bin
@@ -33,7 +34,7 @@ def hello_world2():
 def cloud_Cadastrando():
     received_data = json.load(request.files['datas'])
     try:
-        mongo.db['test1'].insert(received_data)
+        mongo.db.test1.insert(received_data)
     except:
         print('a')
     
