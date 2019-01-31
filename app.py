@@ -33,7 +33,7 @@ def hello_world2():
 def cloud_Cadastrando():
     received_data = json.load(request.files['datas'])
     try:
-        mongo.db.test1.insert(received_data)
+        mongo.db['test1'].insert(received_data)
     except:
         print('a')
     
