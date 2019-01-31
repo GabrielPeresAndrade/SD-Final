@@ -102,3 +102,6 @@ def cliente_liberando():
         msg = 'Erro'
     return jsonify({'Mensagem': msg}) 
     
+
+if __name__ == '__main__':
+    app.run()
