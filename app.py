@@ -5,7 +5,7 @@ import json
 import requests
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/test"
+app.config["MONGO_URI"] = "mongodb+srv://new:adm@sd-dva53.mongodb.net/test?retryWrites=true"
 mongo = PyMongo(app)
 # ------------  Ligar server Mongo ------------------
 # cd Desktop\mongodb-win32-x86_64-2008plus-ssl-4.0.5\bin
