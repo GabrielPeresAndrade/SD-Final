@@ -18,11 +18,16 @@ mongo = PyMongo(app)
 #
 @app.route('/')
 def hello_world():
-    return 'Bem Vindo A Nuvem Quebrada, por favor va para /provedor ou /cliente'
+    msg = 'a'
+    resposta = {'Mensagem':''.join(msg)}
+    return jsonify(resposta)
 
 
 #-----------------------------------------  1  ---------------------------------------------
 
+@app.route('/t', methods=['POST'])
+def hello_world():
+    return {'Teste'}
 
 @app.route('/Provedor', methods=['POST']) #BROKER
 def cloud_Cadastrando():
