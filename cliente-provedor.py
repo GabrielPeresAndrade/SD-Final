@@ -28,7 +28,7 @@ def ouvir(prov,contador):
             contador = contador + 1
 
             files = [('datas', ('datas', json.dumps(datas), 'application/json')),]
-            url = "http://127.0.0.1:5000/Provedor"
+            url = "https://trabalho-sd.herokuapp.com/Provedor"
             r = requests.post(url, files=files)
 
             print (r.json()['Mensagem'])
@@ -37,7 +37,7 @@ def ouvir(prov,contador):
             print("Digite a vCPU, RAM e HD separado por Enters)")
             datas = {'vCPU':int(input()), 'RAM':int(input()), 'HD':int(input())}
 
-            url = "http://127.0.0.1:5000/cliente"
+            url = "https://trabalho-sd.herokuapp.com/cliente"
 
             files = [('datas', ('datas', json.dumps(datas), 'application/json')),]
 
@@ -67,9 +67,6 @@ def ouvir(prov,contador):
             print (r.json()['Mensagem'])
 
 
-
-
-
 prov = random.randint(5001,40000)
 contador = 0
 
@@ -82,7 +79,7 @@ def usar():
     
     datas = {'Prov':prov, 'Maq':received_data['Maq']}
 
-    url = "http://127.0.0.1:5000/usa"
+    url = "https://trabalho-sd.herokuapp.com/usa"
 
     files = [('datas', ('datas', json.dumps(datas), 'application/json')),]
 
@@ -100,7 +97,7 @@ def liberar():
     
     datas = {'Prov':prov, 'Maq':received_data['Maq']}
 
-    url = "http://127.0.0.1:5000/libera"
+    url = "https://trabalho-sd.herokuapp.com/libera"
 
     files = [('datas', ('datas', json.dumps(datas), 'application/json')),]
 
